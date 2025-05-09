@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Marketing Personnel Management</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="p-4">
+
+<div class="container">
+    <h1 class="mb-4">Marketing Personnel Management</h1>
+
+    <!-- Personnel Section -->
+    <div class="mb-5">
+        <div class="d-flex justify-content-between mb-3">
+            <h2>Personnel List</h2>
+            <button class="btn btn-primary" id="btnAddPersonnel">Add Personnel</button>
+        </div>
+        <table class="table table-bordered" id="personnelTable">
+            <thead class="table-light">
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Phone</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Personnel rows will be loaded here -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Sales Section -->
+    <div>
+        <div class="d-flex justify-content-between mb-3">
+            <h2 id="salesTitle">Sales Records</h2>
+            <button class="btn btn-success" id="btnAddSales" disabled>Add Sales</button>
+        </div>
+        <table class="table table-bordered" id="salesTable">
+            <thead class="table-light">
+                <tr>
+                    <th>Report Date</th>
+                    <th>Sales Amount</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Sales rows will be loaded here -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Modal: Add/Edit Personnel -->
+<div class="modal fade" id="personnelModal" tabindex="-1" aria-labelledby="personnelModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form id="personnelForm">
+          <div class="modal-header">
+            <h5 class="modal-title" id="personnelModalLabel">Add Personnel</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <input type="hidden" id="personnelId">
+              <div class="mb-3">
+                  <label>Name</label>
+                  <input type="text" class="form-control" id="personnelName" required>
+              </div>
+              <div class="mb-3">
+                  <label>Age</label>
+                  <input type="number" class="form-control" id="personnelAge" required>
+              </div>
+              <div class="mb-3">
+                  <label>Phone</label>
+                  <input type="text" class="form-control" id="personnelPhone" required>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Save</button>
+          </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Add Sales -->
+<div class="modal fade" id="salesModal" tabindex="-1" aria-labelledby="salesModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form id="salesForm">
+          <div class="modal-header">
+            <h5 class="modal-title" id="salesModalLabel">Add Sales</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <div class="mb-3">
+                  <label>Report Date</label>
+                  <input type="date" class="form-control" id="reportDate" required>
+              </div>
+              <div class="mb-3">
+                  <label>Sales Amount</label>
+                  <input type="number" step="0.01" class="form-control" id="salesAmount" required>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-success">Add</button>
+          </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="script.js"></script>  -->
+<script src="js/script.js"></script>
+</body>
+</html>
